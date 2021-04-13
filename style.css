@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+/*  STYLING TEXT + MARGINS */
+
+p {
+  margin: 5px;
+  padding: 10px;
+  border: 2px solid gold;
+  width: fit-content;
+}
+
+h1 {
+  margin: 12px 5px;
+}
+
+/*  SMALL SCREEN  */
+
+@media screen and (max-width: 300px) {
+  body {
+    background-color: red;
+  }
+
+  #medium,
+  #large {
+    display: none;
+  }
+
+  #small > div,
+  #small > p {
+    font-size: 1.5em;
+  }
+
+  #small > h1 {
+    font-size: 2em;
+  }
+}
+
+/*  MEDIUM SCREEN  */
+
+@media screen and (min-width: 301px) and (max-width: 768px) {
+  body {
+    background-color: green;
+  }
+
+  #small,
+  #large {
+    display: none;
+  }
+
+  #medium > div > p,
+  #medium > p {
+    font-size: 2em;
+  }
+
+  #medium > h1 {
+    font-size: 2.5em;
+  }
+}
+
+#medium > div:nth-child(3) {
+  width: 66%;
+}
+
+#medium > div:nth-child(4) {
+  width: 33%;
+}
+
+#medium > div:nth-child(5) {
+  width: 100%;
+}
+/*  BIG SCREEN  */
+
+@media screen and (min-width: 769px) {
+  body {
+    background-color: blue;
+  }
+
+  #small,
+  #medium {
+    display: none;
+  }
+
+  .large-wrap > div > p,
+  #large > p {
+    font-size: 2.5em;
+  }
+
+  #large > h1 {
+    font-size: 3em;
+  }
+  .large-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
